@@ -1,0 +1,144 @@
+<nav class="navbar navbar-dark">
+    <!-- NAV CONTAINER START -->
+    <div class="container-fluid">
+       
+         <a href="" class="navbar-brand text-info fw-semibold fs-4">Ingreso CDA</a>
+       
+        <div>
+            <!-- <ng-template [appPermisos]="['admin']" > -->
+               <!--  <div *appPermisos = "['SUPERUSER','ADMIN']" >
+ -->
+                
+              <!--*appPermisos = "['SUPERUSER','ADMIN']"    -->
+                    
+              <button *appPermisos = "['SUPERUSER','ADMIN']" class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuLateral">      
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+           
+           
+           <!-- *appPermisos = "['INVITADO']"   -->
+            <button  class="btn btn-primary mb-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#Login">
+                Login
+            </button>
+             <!-- *appPermisos = "['SUPERUSER','ADMIN','OPERARIO']"-->
+            <button *appPermisos = "['SUPERUSER','ADMIN','OPERARIO']"  (click)="cerrarSesion()" class="btn btn-danger mb-3" type="button" data-bs-toggle="offcanvas" >
+                Close
+            </button>
+
+
+
+        </div>
+        <section class="offcanvas offcanvas-start" id="Login" tabindex="-1">
+            
+            <div class="offcanvas-header" data-bs-theme="dark">
+                <h5 class="offcanvas-title text-info">LOGIN</h5>
+                <button
+                
+                class="btn-close"
+                type="button"
+                aria-label="Close"
+                data-bs-dismiss="offcanvas"
+                >
+                </button>
+            </div>
+
+            <div class="offcanvas-body d-flex flex-column justify-content-between px-0">
+
+                <form [formGroup]="loginform" (submit)="realizoLogin()" class="row g-3">
+                    <div class="col-auto">
+                        <label for="staticEmail" class="visually-hidden">Email</label>
+                        <input type="text" formControlName="login" class="form-control" placeholder="email@example.com">
+                        @if(login?.invalid && login?.touched)
+                        {
+                            <span>
+                                <small class="text-danger">El nombre de usuario es obligatorio y debe ser un email</small>
+                            </span>
+                        }    
+                    
+                    </div>
+                    <div class="col-auto">
+                        <label for="inputPassword2" class="visually-hidden">Password</label>
+                        <input type="password" class="form-control" formControlName="password" placeholder="Password">
+                        @if(password?.invalid && password?.touched)
+                        {
+                            <span>
+                                <small class="text-danger">El password es obligatorio</small>
+                            
+                                    @if(password?.hasError('minlength'))
+                                    {
+                                        <small class="text-danger">El password no tiene longitud minima</small>
+
+                                    }    
+                            
+                            </span>
+                        }
+                    </div>
+                    
+                    <div class="mt-4">
+                        <!-- <div class="col-auto"> -->
+                       <div class="form-group float-end">
+                        <a href="" class="small">¿Olvidaste contraseña?</a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-auto">
+                    <button type="submit" class="btn btn-primary btn-block mb-3" [disabled]= "!loginform.valid">Iniciar Sesion</button>
+                    </div>
+
+                    
+
+                </form>
+            </div>
+        </section>
+
+        <section class="offcanvas offcanvas-start" id="menuLateral" tabindex="-1">
+            <div class="offcanvas-header" data-bs-theme="dark">
+                <h5 class="offcanvas-title text-info">CDA</h5>
+                <button class="btn-close" type="button" aria-label="Close"data-bs-dismiss="offcanvas"></button>
+            </div>
+
+            <div class="offcanvas-body d-flex flex-column justify-content-between px-0">
+                <ul class="navbar-nav fs-5 justify-content-evenly">
+                    <li class="nav-item p-3 py-md-1">
+                        <a [routerLink]="ROUTER_APP.INICIO"class="nav-link">Inicio</a>
+                    </li>
+                   
+                            <li class="nav-item p-3 py-md-1">
+                                <a [routerLink]="ROUTER_APP.VERCLIENTES" class="nav-link">Ver Clientes</a>
+                            </li>
+                    
+                    <li class="nav-item p-3 py-md-1">
+                        <a [routerLink]="ROUTER_APP.INGRESARCLIENTES" class="nav-link">Ingresar Clientes</a>
+                    </li>
+                   <!--  <li class="nav-item p-3 py-md-1">
+                        <a [routerLink]="ROUTER_APP.AVANZADAS" class="nav-link">Avanzadas</a>
+                    </li> -->
+
+                    <li class="nav-item p-3 py-md-1">
+                        <a [routerLink]="[ROUTER_APP.CREARUSUARIOS,'nuevo']"   class="nav-link">Crear Usuarios</a>
+                    </li>
+
+                    <li class="nav-item p-3 py-md-1">
+                        <a [routerLink]="ROUTER_APP.VERUSUAIROS" class="nav-link">Ver Usuarios</a>
+                    </li>
+
+
+                </ul>
+
+
+
+                <!-- enlaces redes sociales -->
+
+                <!-- <div class="d-lg-none align-self-center py-3">
+                <a href=""><i class="bi bi-twitter px-2 text-info fs-2"></i></a>
+                <a href=""><i class="bi bi-facebook px-2 text-info fs-2"></i></a>
+                <a href=""><i class="bi bi-github px-2 text-info fs-2"></i></a>
+                <a href=""><i class="bi bi-whatsapp px-2 text-info fs-2"></i></a>
+                </div> -->
+            </div>
+        </section>
+    </div>
+</nav>
+
+

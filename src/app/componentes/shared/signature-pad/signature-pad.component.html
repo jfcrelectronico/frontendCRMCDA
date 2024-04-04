@@ -1,0 +1,26 @@
+<!--links crear signature pad Angular 
+    
+    Building a Signature Pad in Angular: A Step-by-Step Guide ✍️ | by Ganapathy Subramanian | Medium
+     
+    signature_pad/src at main · GanapathySubramanian/signature_pad (github.com)
+ -->
+
+<p>Agrege su firma aqui</p>
+<canvas
+    #canvas
+    (touchstart)="startDrawing($event)"
+    (touchmove)="moved($event)"
+    
+
+></canvas>
+
+<div class="buttons flex justify-between">
+    <button (click)="clearPad()">Limpiar</button>
+    <button (click)="savePad()">Guardar Firma</button>
+
+</div>
+
+<!-- <div *ngIf="signatureNeeded === false"> 
+    <img src="{{firmaCLiente}}"/>
+</div> -->
+

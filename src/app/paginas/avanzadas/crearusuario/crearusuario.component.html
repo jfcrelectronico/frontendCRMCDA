@@ -1,0 +1,116 @@
+<div class="container-fluid" id="grad1">
+    <div class="row justify-content-center mt-0">
+        <div class="col-11 col-sm-9 col-md-7 col-lg-6 text-center p-0 mt-3 mb-2">
+            <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
+                <h2><strong>Registro Funcionarios</strong></h2>
+                <p>Llene todos los campos antes de presionar el boton guardar</p>
+                <div class="row">
+                    <div class="col-md-12 mx-0">
+                        <form id="msform"  [formGroup]="UsuarioForm"(submit)="crearusuario()">
+                            <!-- progressbar -->
+                          <!--   <ul id="progressbar">                                
+                                <li id="Funcionario"><strong>Datos Funcionario</strong></li>
+                            </ul> -->
+                            <!-- fieldsets -->
+                            <fieldset>
+                                <div class="form-card">
+                                    
+                                   <!--  <form id="msform"  [formGroup]="UsuarioForm"(submit)="crearusuario()"> -->
+                                        
+                                        <fieldset>
+                                            <div class="form-card">
+                                                <h2 class="fs-title">Formulario de Ingreso</h2>
+
+
+
+                                               
+
+
+                                        
+                                        <!-- <div class="form-card">   -->    
+                                            <!-- <div class="form-group col-6">
+                                                <label for="nombre">Nombre:</label> -->
+                                                <input type="text" formControlName="nombre" placeholder="Ingrese el nombre del Usuario"/> 
+                                            <!-- </div> -->
+                                        
+                                           <!--  <div class="form-group col-6">
+                                                <label for="email">Email:</label> -->
+                                                <input type="text" formControlName="email" placeholder="Ingrese el email del Usuario"/> 
+                                           <!--  </div> -->
+                            
+                                            <!-- <div class="form-group col-6">
+                                                <label for="tipoDocumento">Tipo de Documento:</label> -->
+                                                <input type="text" formControlName="tipoDocumento" placeholder="Ingrese el tipo de documento del usuario"/> 
+                                           <!--  </div> -->
+
+                                           <!--  <div class="form-group col-6">
+                                                <label for="numeroDocumento">Numero de Documento:</label> -->
+                                                <input type="text" formControlName="numeroDocumento" placeholder="Ingrese el numeroDocumento del usuario"/> 
+                                          <!--   </div>
+                                     -->
+                                            <!-- <div class="form-group col-6">
+                                                <label for="login">Login de usuario:</label>   -->
+                                                <input type="text" formControlName="login" placeholder="Ingrese login de usuario debe ser un correo electronico"/> 
+                                           <!--  </div> -->
+
+                                          <!--   <div class="form-group col-6">
+                                                <label for="password">Password:</label>   -->
+                                                <input type="password" formControlName="password" placeholder="Ingrese el password de ingreso para el usuario" /> 
+                                            <!-- </div> -->
+
+                                            <!-- <div class="form-group col-6"> -->
+                                                <label for="rol">Seleccione el rol del usuario:</label>  
+                                              
+                                              
+                                                <select class="form-control" formControlName="rol" placeholder="seleccione un rol">
+                                                    @for (rol of roles; track $index){
+                                                        <option [value]="rol">{{rol}}</option>
+                                                    }
+
+                                                </select>
+                                                
+                                           <!--  </div> -->
+
+                                        <!--   <div class="form-group col-6">
+                                                <label for="UsuarioEstado">Seleccione el estado del usuario:</label>  
+                                                <select class="form-control">                                           
+                                                        <option >True</option>
+                                                        <option >DFalse</option>                                              
+                                                </select>
+                                                
+                                            </div> -->
+                                
+
+                                           <!--  <div class="form-group"> -->
+                                              <!--   <button type="submit" class="btn btn-primary mb-3">Guardar</button>  -->
+                                            <!-- </div> -->
+                                            
+                                           <!--  <div class="form-group"> -->
+                                               <!--  <button class="btn btn-danger mb-3"><a routerLink="">Cancelar</a></button>  -->
+                                           <!--  </div> -->
+                                        <!-- </div> -->
+                                        <div>
+                                            <button class="button-71" type="submit" >Guardar</button>
+                                            <button class="button-77"><a routerLink="">Cancelar</a></button>  
+                                        </div>
+                                           
+                                            </div>
+                                           
+                                           
+                                        </fieldset>
+                                   
+                                    <!-- </form> -->
+                                    
+                                   <!--  <button type="submit" class="btn btn-primary mb-3">Guardar</button>  -->
+                                   
+                                </div>
+                               
+                            </fieldset>  
+                                                   
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

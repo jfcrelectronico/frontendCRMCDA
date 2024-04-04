@@ -1,0 +1,105 @@
+<!--  call modal app-agregarclientes 
+              infoclientenuevo is the function of type @output define inside agregarclientes.components.ts
+              the value return for this funcion will be assigned to function actualizarcliente define inside of
+              verclientes.components.ts, this funcion receive an element of type interface cliente
+               -->
+
+<!-- <app-ingresarclientes (infoclientenuevo)="actualizarcliente($event)"></app-ingresarclientes> -->
+
+<div class="bg-image h-100" style="background-color: #f5f7fa; margin-bottom: -5px;">
+  <div class="mask d-flex align-items-center h-100">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-body p-0">
+
+              <div class="table-responsive table-scroll ">
+                  <table class="table table-striped mb-0" border="1px solid black">
+                    <thead style="background-color: #002d72;">
+                       <!--  <h3 style="color: white;">VEHICULOS ESPERANDO POR INSPECCION</h3>
+                          <td>
+                          <a class="btn btn-danger btn-sm" (click)="showagregarclientes()">Agregar</a>
+
+                          @if (mostrar)
+                          {                          
+                            <app-ingresarclientes (infoclientenuevo)="actualizarcliente($event)"></app-ingresarclientes>
+                          }
+
+                          </td>  -->
+                        <tr>
+
+                            
+                            <th>Id</th>
+                            <th>Nombre</th>
+                            <th>Direccion</th>
+                            <th>Telefono</th>
+                            <th>Email</th>
+                            <th>Tipo de Documento</th>
+                            <th>Placa del Vehiculo</th>
+                            <th>Tipo de Vehiculo</th>
+                            <th>Observaciones</th>
+                            <th>Acciones</th>
+
+                        </tr>        
+                    </thead>
+                    <tbody>
+                      
+                        @for (cliente of misclientesForm | paginate: { itemsPerPage: 5, currentPage: p }; track $index){
+                        <tr> 
+
+                            
+                            
+                                <td scope="col">{{ $index +1}}</td>
+                                <td>{{cliente.nombre}}</td>
+                                <td>{{cliente.direccion}}</td>
+                                <td>{{cliente.telefono}}</td>
+                                <td>{{cliente.email}}</td>
+                                <td>{{cliente.TipoDocumento}}</td>
+                                <td>{{cliente.PlacaVehiculo}}</td>
+                                <td>{{cliente.TipoVehiculo}}</td>
+                                <td>{{cliente.Observaciones}}</td>
+                                <!-- btn->button,btn-sm->button small, bg-info-> type button info -->
+                                <td>
+                                                  
+                                  
+                                  <a class="btn btn-danger btn-sm" (click)="eliminarCliente(cliente._id)">Eliminar</a>
+                                  <a class="btn btn-success btn-sm" (click)="actualizarcliente(cliente)">Actualizar</a>
+                                  <a class="btn btn-primary btn-sm" (click)="editarcliente(cliente._id)">Editar</a>
+                                  <!-- <button type="submit" class="btn btn-danger btn-sm">
+                                    <i class="bi bi-trash" (click)="eliminarCliente(cliente.id)"></i>ELiminar
+                                  </button> -->
+                                  
+                                  
+                                  <!--  <button type="submit" class="btn btn-danger btn-sm">
+                                        <i class="bi bi-trash" (click)="eliminarCliente(cliente.id)"></i>ELiminar
+                                    </button>
+
+                                      <button type="submit" class="btn btn-primary btn-sm">
+                                        <i class="bi bi-pencil"></i>Editar
+                                      </button>
+
+                                      <button type="submit" class="btn btn-success btn-sm">
+                                        <i class="bi bi-journal-check"></i>Actualizar
+                                      </button> -->
+                                      
+                                </td>
+                              
+                                      
+                            
+                        </tr>
+                    }
+                      
+                    </tbody>
+                  </table>
+                </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
+

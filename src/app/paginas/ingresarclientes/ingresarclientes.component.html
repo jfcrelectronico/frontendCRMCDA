@@ -1,0 +1,73 @@
+<div class="container-fluid" id="grad1">
+    <div class="row justify-content-center mt-0">
+        <div class="col-11 col-sm-9 col-md-7 col-lg-6 text-center p-0 mt-3 mb-2">
+            <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
+                <h2><strong>Registro Clientes</strong></h2>
+                <p>Llene todos los campos antes de presionar el boton guardar</p>
+                <div class="row">
+                    <div class="col-md-12 mx-0">
+                        <form id="msform"  [formGroup]="clienteForm"(submit)="crearcliente()">
+                            <!-- progressbar -->
+                          <!--   <ul id="progressbar">                                
+                                <li id="Funcionario"><strong>Datos Cliente</strong></li>
+                            </ul> -->
+                            <!-- fieldsets -->
+                            <fieldset>
+                                <div class="form-card">
+                                    
+                                
+                                        
+                                        <fieldset>
+                                            <div class="form-card">
+                                                <h2 class="fs-title">Formulario de Ingreso Clientes</h2>
+
+
+                                                <input type="text" formControlName="nombre" placeholder="Ingrese el nombre del cliente"/> 
+                                
+                                                <input type="text" formControlName="direccion" placeholder="Ingrese la direccion del cliente"/> 
+                                   
+                                                <input type="text" formControlName="telefono" placeholder="Ingrese el telefono del cliente"/> 
+                                          
+                                                <input type="text" formControlName="email" placeholder="Ingrese el email del cliente"/> 
+                                  
+                                                <input type="text" formControlName="TipoDocumento" placeholder="Ingrese el tipo de documento del cliente"/> 
+                                          
+                                                <input type="text" formControlName="NumeroDocumento" placeholder="Ingrese el numeroDocumento del cliente"/> 
+                                        
+                                                <input type="text" formControlName="PlacaVehiculo" placeholder="Ingrese la placa del Vehiculo"/> 
+                                        
+                                                <input type="text" formControlName="TipoVehiculo" placeholder="Ingrese el tipo de Vehiculo" /> 
+                                    
+                                                <input type="text" formControlName="Observaciones" placeholder="Observaciones" /> 
+                                            
+                                                <div id="msform ">
+                                                    <app-signature-pad (firma)="datafirma($event)">                                                       
+                                                    </app-signature-pad>  
+                                                   
+                                                    <app-pdf [crearPdf]="crearPdf" [clienteCreado]="clienteCreado" [firmaCliente]="firma">
+                                                      
+                                                    </app-pdf>                                            	
+                                                    
+                                                </div>
+                                            </div>
+
+                                            <div>
+                                                <button class="button-71" type="submit" >Guardar</button>
+                                           
+                                                <button class="button-77"><a routerLink="">Cancelar</a></button>  
+                                                	
+                                               <!--  <button class="button-71" (click)="createPDF()">Crear PDF</button> -->
+                                            </div>                                      
+                                        </fieldset>                                 
+                                   
+                                </div>
+                               
+                            </fieldset>  
+                                                   
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
