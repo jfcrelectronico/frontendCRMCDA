@@ -82,12 +82,12 @@ export class PdfComponent implements OnChanges {
     doc.setFontSize(14);
     doc.text("Nombre",20,60,{align:'left'});
     doc.rect(20, 62,90,10); // empty square
-    doc.text(this.clienteCreado.nombre,25,68,{align:'center'});
+    doc.text(this.clienteCreado.nombre,29,68,{align:'center'});
 
     doc.setFontSize(14);
     doc.text("Telefono",120,60,{align:'left'});
     doc.rect(120, 62,40,10); // empty square
-    doc.text(this.clienteCreado.telefono,125,68,{align:'center'});
+    doc.text(this.clienteCreado.telefono,129,68,{align:'center'});
 
     doc.setFontSize(14);
     doc.text("Tipo Documento",165,60,{align:'left'});
@@ -97,23 +97,23 @@ export class PdfComponent implements OnChanges {
     doc.setFontSize(14);
     doc.text("Numero Documento",210,60,{align:'left'});
     doc.rect(210, 62,60,10); // empty square
-    doc.text(this.clienteCreado.NumeroDocumento,218,68,{align:'center'});
+    doc.text(this.clienteCreado.NumeroDocumento,222,68,{align:'center'});
     
     
     doc.setFontSize(14);
     doc.text("Direccion: ",20,90,{align:'left'});
     doc.rect(20, 92,120,10); // empty square
-    doc.text(this.clienteCreado.direccion,25,98,{align:'center'});
+    doc.text(this.clienteCreado.direccion,29,98,{align:'center'});
 
     doc.setFontSize(14);
     doc.text("Correo Electronico: ",150,90,{align:'left'});
     doc.rect(150, 92,120,10); // empty square
-    doc.text(this.clienteCreado.email,167,98,{align:'center'});
+    doc.text(this.clienteCreado.email,171,98,{align:'center'});
 
     doc.setFontSize(14);
     doc.text("Tipo de vehiculo: ",20,120,{align:'left'});
     doc.rect(20, 122,50,10); // empty square
-    doc.text(this.clienteCreado.TipoVehiculo,27,128,{align:'center'});
+    doc.text(this.clienteCreado.TipoVehiculo,31,128,{align:'center'});
 
     doc.setFontSize(14);
     doc.text("Placa del vehiculo: ",150,120,{align:'left'});
@@ -196,7 +196,7 @@ export class PdfComponent implements OnChanges {
     
     doc.addImage({
       x: 185,
-      y: 155,
+      y: 152,
       width: 50,
       height: 30,      
       imageData : this.firmaCliente})
@@ -210,6 +210,8 @@ export class PdfComponent implements OnChanges {
 
     
   }
+
+  
    
 
   }
