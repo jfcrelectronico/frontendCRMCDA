@@ -82,7 +82,8 @@ export class PdfComponent implements OnChanges {
     doc.setFontSize(14);
     doc.text("Nombre",20,60,{align:'left'});
     doc.rect(20, 62,90,10); // empty square
-    doc.text(this.clienteCreado.nombre,29,68,{align:'center'});
+    //doc.text(this.clienteCreado.nombre,29,68,{align:'center'});
+    doc.text(this.clienteCreado.nombre,29,68);
 
     doc.setFontSize(14);
     doc.text("Telefono",120,60,{align:'left'});
