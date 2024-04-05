@@ -87,7 +87,7 @@ export class PdfComponent implements OnChanges {
     doc.setFontSize(14);
     doc.text("Telefono",120,60,{align:'left'});
     doc.rect(120, 62,40,10); // empty square
-    doc.text(this.clienteCreado.telefono,129,68,{align:'center'});
+    doc.text(this.clienteCreado.telefono,133,68,{align:'center'});
 
     doc.setFontSize(14);
     doc.text("Tipo Documento",165,60,{align:'left'});
@@ -97,13 +97,13 @@ export class PdfComponent implements OnChanges {
     doc.setFontSize(14);
     doc.text("Numero Documento",210,60,{align:'left'});
     doc.rect(210, 62,60,10); // empty square
-    doc.text(this.clienteCreado.NumeroDocumento,222,68,{align:'center'});
+    doc.text(this.clienteCreado.NumeroDocumento,225,68,{align:'center'});
     
     
     doc.setFontSize(14);
     doc.text("Direccion: ",20,90,{align:'left'});
     doc.rect(20, 92,120,10); // empty square
-    doc.text(this.clienteCreado.direccion,29,98,{align:'center'});
+    doc.text(this.clienteCreado.direccion,30,98,{align:'center'});
 
     doc.setFontSize(14);
     doc.text("Correo Electronico: ",150,90,{align:'left'});
@@ -113,13 +113,13 @@ export class PdfComponent implements OnChanges {
     doc.setFontSize(14);
     doc.text("Tipo de vehiculo: ",20,120,{align:'left'});
     doc.rect(20, 122,50,10); // empty square
-    doc.text(this.clienteCreado.TipoVehiculo,31,128,{align:'center'});
+    doc.text(this.clienteCreado.TipoVehiculo,30,128,{align:'center'});
 
     doc.setFontSize(14);
     doc.text("Placa del vehiculo: ",150,120,{align:'left'});
     doc.rect(150, 122,80,40); // empty square
     doc.setFontSize(42);
-    doc.text(this.clienteCreado.PlacaVehiculo.toUpperCase(),180,148,{align:'center'});
+    doc.text(this.clienteCreado.PlacaVehiculo.toUpperCase(),183,148,{align:'center'});
 
     doc.addPage();
 
